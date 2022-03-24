@@ -1,0 +1,40 @@
+body {
+   color: #FEECE9; 
+}
+
+/* Changing color of navbar font
+ .navbar-brand, .nav-link { 
+    color: #FE7E6D;
+    } */
+
+
+#navbar {
+    background-color: #CCD1E4;
+    font-family: "", sans-serif;
+    font-weight: 400;
+  }
+  
+  /* Brand Name */
+  .brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  /* Containers */
+  
+  .navbar-container {
+    padding: 2% 8%;
+    font-size: 3rem;
+  }
+  
+  .nav-item {
+    padding: 0 18px;
+  }
+  
+  .nav-link {
+    font-size: 1.2rem;
+  }
+  
+  .logo-img {
+    width: 20%;
+  }
