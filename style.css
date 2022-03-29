@@ -1,0 +1,120 @@
+body {
+  color: #2f3a8f;
+  background-color: #FEECE9;
+  font-family: "Roboto", "sans-serif";
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+/* Title */
+
+#title {
+  padding: 3% 15%;
+}
+
+.heading-text {
+  color: #FE7E6D;
+  font-weight: 900;
+}
+
+@media (max-width: 768px) {
+  .heading-text {
+    font-size: 2rem;
+  }
+}
+
+/* Tools */
+
+.inside-text {
+  font-size: 1.2rem;
+  padding: 7% 15%;
+}
+
+@media (max-width: 768px) {
+  .inside-text {
+    font-size: 0.9rem;
+    padding: 7% 0%;
+  }
+  .tools-heading {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* Footer */
+#tools {
+  padding: 0% 15%; 
+}
+
+#footer {
+  background-color: #ccd1e4;
+  padding: 2.95% 15%;
+}
+
+.fab, .fas {
+  margin: 15px;
+}
+
+/* Images */
+
+.girl-img {
+  height: 40%;
+  width: 40%;
+  position: relative;
+  
+}
+
+.boy-img {
+  height: 30%;
+  width: 30%;
+}
+
+/* Navbar */
+
+/* .brand, .nav-link { 
+  color: #2f3a8f;
+} */
+
+.nav-link {
+  font-weight: 500;
+}
+
+#navbar {
+  background-color: #ccd1e4;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+/* Brand Name */
+.brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Containers */
+
+.navbar-container {
+  padding: 2% 8%;
+  font-size: 3rem;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+}
+
+.logo-img {
+  width: 20%;
+}
