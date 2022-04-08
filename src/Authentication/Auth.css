@@ -1,0 +1,81 @@
+:root {
+    --orange: #fe7e6d;
+    --peach: #feece98f;
+    --grey: #ccd1e4;
+    --white: rgb(255, 255, 255);
+  }
+  
+ body {
+    color: var(--orange);
+    background-color: var(--peach);
+    font-family: "Roboto", "sans-serif";
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    font-weight: 900;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+  }  
+
+
+  #footer {
+    background-color: var(--grey);
+    color: white;
+    padding: 2.95% 15%;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  .fab,
+  .fas {
+    margin: 15px;
+  }
+  
+  @media (max-width: 768px) {
+    #footer {
+      padding: 7.5% 15%;
+    }
+  }
+  
+  /* Navbar */
+  
+  .nav-link {
+    font-weight: 500;
+  }
+  
+  #navbar {
+    background-color: var(--grey);
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+  }
+  
+  /* Brand Name */
+  
+  .brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .navbar-container {
+    padding: 2% 8%;
+    font-size: 3rem;
+  }
+  
+  .nav-item {
+    padding: 0 18px;
+  }
+  
+  .nav-link {
+    font-size: 1.2rem;
+  }
+  
+  .logo-img {
+    width: 15%;
+    margin-right: 3%;
+    border-radius: 1rem;
+  }
