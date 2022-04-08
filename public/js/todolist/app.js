@@ -1,138 +1,64 @@
-const todoInput = document.querySelector(".todo-input");
-const todoButton = document.querySelector(".todo-button");
-const todoList = document.querySelector(".todo-list");
-const filterOption = document.querySelector(".filter-todo");
+// esversion: 6
 
-document.addEventListener("DOMContentLoaded", getTodos);
-todoButton.addEventListener("click", addTodo);
-todoList.addEventListener("click", deleteTodo);
-filterOption.addEventListener("click", filterTodo);
+window.addEventListener('load', () => {
+	const form = document.querySelector("#new-task-form");
+	const input = document.querySelector("#new-task-input");
+	const list_el = document.querySelector("#tasks");
 
+	form.addEventListener('submit', (e) => {
+		e.preventDefault();
 
+		const task = input.value;
 
-function addTodo(e) {
-  
-  e.preventDefault();
-  
-  const todoDiv = document.createElement("div");
-  todoDiv.classList.add("todo");
-  
-  const newTodo = document.createElement("li");
-  newTodo.innerText = todoInput.value;
+		const task_el = document.createElement('div');
+		task_el.classList.add('task');
 
-  saveLocalTodos(todoInput.value);
+		const task_content_el = document.createElement('div');
+		task_content_el.classList.add('content');
 
-  newTodo.classList.add("todo-item");
-  todoDiv.appendChild(newTodo);
-  todoInput.value = "";
-  
-  const completedButton = document.createElement("button");
-  completedButton.innerHTML = `<i class="fas fa-check"></i>`;
-  completedButton.classList.add("complete-btn");
-  todoDiv.appendChild(completedButton);
- 
-  const trashButton = document.createElement("button");
-  trashButton.innerHTML = `<i class="fas fa-trash"></i>`;
-  trashButton.classList.add("trash-btn");
-  todoDiv.appendChild(trashButton);
+		task_el.appendChild(task_content_el);
 
-  todoList.appendChild(todoDiv);
-}
+		const task_input_el = document.createElement('input');
+		task_input_el.classList.add('text');
+		task_input_el.type = 'text';
+		task_input_el.value = task;
+		task_input_el.setAttribute('readonly', 'readonly');
 
-function deleteTodo(e) {
-  const item = e.target;
+		task_content_el.appendChild(task_input_el);
 
-  if (item.classList[0] === "trash-btn") {
-    
-    const todo = item.parentElement;
-    todo.classList.add("fall");
-    
-    removeLocalTodos(todo);
-    todo.addEventListener("transitionend", e => {
-      todo.remove();
-    });
-  }
-  if (item.classList[0] === "complete-btn") {
-    const todo = item.parentElement;
-    todo.classList.toggle("completed");
-    console.log(todo);
-  }
-}
+		const task_actions_el = document.createElement('div');
+		task_actions_el.classList.add('actions');
+		
+		const task_edit_el = document.createElement('button');
+		task_edit_el.classList.add('edit');
+		task_edit_el.innerText = 'Edit';
 
-function filterTodo(e) {
-  const todos = todoList.childNodes;
-  todos.forEach(function(todo) {
-    switch (e.target.value) {
-      case "all":
-        todo.style.display = "flex";
-        break;
-      case "completed":
-        if (todo.classList.contains("completed")) {
-          todo.style.display = "flex";
-        } else {
-          todo.style.display = "none";
-        }
-        break;
-      case "uncompleted":
-        if (!todo.classList.contains("completed")) {
-          todo.style.display = "flex";
-        } else {
-          todo.style.display = "none";
-        }
-    }
-  });
-}
+		const task_delete_el = document.createElement('button');
+		task_delete_el.classList.add('delete');
+		task_delete_el.innerText = 'Delete';
 
-function saveLocalTodos(todo) {
-  let todos;
-  if (localStorage.getItem("todos") === null) {
-    todos = [];
-  } else {
-    todos = JSON.parse(localStorage.getItem("todos"));
-  }
-  todos.push(todo);
-  localStorage.setItem("todos", JSON.stringify(todos));
-}
-function removeLocalTodos(todo) {
-  let todos;
-  if (localStorage.getItem("todos") === null) {
-    todos = [];
-  } else {
-    todos = JSON.parse(localStorage.getItem("todos"));
-  }
-  const todoIndex = todo.children[0].innerText;
-  todos.splice(todos.indexOf(todoIndex), 1);
-  localStorage.setItem("todos", JSON.stringify(todos));
-}
+		task_actions_el.appendChild(task_edit_el);
+		task_actions_el.appendChild(task_delete_el);
 
-function getTodos() {
-  let todos;
-  if (localStorage.getItem("todos") === null) {
-    todos = [];
-  } else {
-    todos = JSON.parse(localStorage.getItem("todos"));
-  }
-  todos.forEach(function(todo) {
-    
-    const todoDiv = document.createElement("div");
-    todoDiv.classList.add("todo");
-    
-    const newTodo = document.createElement("li");
-    newTodo.innerText = todo;
-    newTodo.classList.add("todo-item");
-    todoDiv.appendChild(newTodo);
-    todoInput.value = "";
-    
-    const completedButton = document.createElement("button");
-    completedButton.innerHTML = `<i class="fas fa-check"></i>`;
-    completedButton.classList.add("complete-btn");
-    todoDiv.appendChild(completedButton);
-    
-    const trashButton = document.createElement("button");
-    trashButton.innerHTML = `<i class="fas fa-trash"></i>`;
-    trashButton.classList.add("trash-btn");
-    todoDiv.appendChild(trashButton);
-   
-    todoList.appendChild(todoDiv);
-  });
-}
+		task_el.appendChild(task_actions_el);
+
+		list_el.appendChild(task_el);
+
+		input.value = '';
+
+		task_edit_el.addEventListener('click', (e) => {
+			if (task_edit_el.innerText.toLowerCase() == "edit") {
+				task_edit_el.innerText = "Save";
+				task_input_el.removeAttribute("readonly");
+				task_input_el.focus();
+			} else {
+				task_edit_el.innerText = "Edit";
+				task_input_el.setAttribute("readonly", "readonly");
+			}
+		});
+
+		task_delete_el.addEventListener('click', (e) => {
+			list_el.removeChild(task_el);
+		});
+	});
+});
