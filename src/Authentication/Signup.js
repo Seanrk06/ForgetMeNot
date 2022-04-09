@@ -38,10 +38,7 @@ const Signup = () => {
 
   return (
     <>
-    
-    
-    
-  
+
   <section>
       <div className="p-4 box">
         <h2 >Signup</h2>

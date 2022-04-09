@@ -6,6 +6,7 @@
   }
   
  body {
+  padding-top: 70px;
     color: var(--orange);
     background-color: var(--peach);
     font-family: "Roboto", "sans-serif";
@@ -44,11 +45,14 @@
   
   /* Navbar */
   
+  
   .nav-link {
     font-weight: 500;
   }
   
   #navbar {
+    position: top;
+    top: 0;
     background-color: var(--grey);
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -79,3 +83,5 @@
     margin-right: 3%;
     border-radius: 1rem;
   }
+
+  

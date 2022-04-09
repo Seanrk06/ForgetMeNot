@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Navbar } from "react-bootstrap";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./Home";
@@ -12,10 +12,11 @@ import { Helmet } from "react-helmet";
 function App() {
   
   return (
-    <Container style={{ width: "400px" }}>
+    
       
         
           <UserAuthContextProvider>
+            <BrowserRouter> 
           <Helmet>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -34,7 +35,7 @@ function App() {
     <link rel="stylesheet" href="./style.css"/>
     <title>ForgetMeNot</title>
     </Helmet>
-    <section id="navbar">
+    <Navbar id="navbar" class="navbar" fixed="top">
         {/* <!-- Nav Bar --> */}
         <div class="container-fluid navbar-container">
             <nav class="navbar navbar-expand-lg navbar-dark" >
@@ -65,8 +66,10 @@ function App() {
             </nav>
         </div>
         
-  </section>
-          <BrowserRouter> 
+  </Navbar>
+  <div>
+  <Container style={{ width: "400px"}}>
+          
             <Routes>
               <Route
                 path="/home"
@@ -79,11 +82,13 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
             </Routes>
-            </BrowserRouter>
+            
+            </Container>
+          </div>
+          </BrowserRouter>
           </UserAuthContextProvider>
           
-      
-    </Container>
+    
   );
 }
 

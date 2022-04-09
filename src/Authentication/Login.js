@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Form, Alert } from "react-bootstrap";
-import { Button } from "react-bootstrap";
-import GoogleButton from "react-google-button";
+import { Form, Alert, Button } from "react-bootstrap";
 import { useUserAuth } from "./UserAuthContext";
 import './Auth.css'
 const Login = () => {
@@ -23,15 +21,6 @@ const Login = () => {
     }
   };
 
-  const handleGoogleSignIn = async (e) => {
-    e.preventDefault();
-    try {
-      await googleSignIn();
-      navigate("/home");
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
   useEffect(() => {
     document.body.style.backgroundColor = "#feece98f";
 
@@ -69,13 +58,7 @@ const Login = () => {
           </div>
         </Form>
         <hr />
-        {/* <div> may use this later but not necessary for now...
-          <GoogleButton
-            className="g-btn"
-            type="dark"
-            onClick={handleGoogleSignIn}
-          />
-        </div> */}
+        
       </div>
       <div className="p-4 box mt-3 text-center">
         Don't have an account? <Link to="/signup">Sign up</Link>
