@@ -1,0 +1,212 @@
+:root {
+  --orange: #fe7e6d;
+  --peach: #feece98f;
+  --grey: #ccd1e4;
+  --white: rgb(255, 255, 255);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--peach);
+  font-family: "Roboto", "sans-serif";
+  min-height: 100vh;
+  text-align: center;
+}
+
+h1 {
+  color: var(--orange);
+  font-size: 3rem;
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+h2 {
+  color: var(--orange);
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: var(--grey);
+}
+form button {
+  color: var(--white);
+  background: var(--grey);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  background: var(--orange);
+}
+
+/* Title */
+#title {
+  margin: 2.5%;
+}
+
+/* Todo */
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo {
+  margin: 0.5rem;
+  background: var(--grey);
+  font-size: 1.5rem;
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+
+.todo-input {
+  color: var(--white);
+}
+
+.filter-todo {
+  padding: 1rem;
+  background-color: var(--grey);
+  color: var(--white);
+}
+.todo li {
+  flex: 1;
+}
+
+.trash-btn,
+.complete-btn {
+  background: var(--grey);
+  color: black;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+  display: none;
+}
+
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+select {
+  color: var(--white);
+  background-color: var(--grey);
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  width: 12rem;
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background: var(--grey);
+  cursor: pointer;
+  pointer-events: none;
+}
+
+
+/* Footer */
+
+#footer {
+  background-color: var(--grey);
+  color: white;
+  padding: 2.95% 15%;
+  width: 100%;
+  margin-top: 12.5%;
+  bottom: 0;
+}
+
+.fab,
+.fas {
+  margin: 15px;
+}
+
+/* Navbar */
+
+.nav-link {
+  font-weight: 500;
+}
+
+#navbar {
+  background-color: var(--grey);
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+/* Brand Name */
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.navbar-container {
+  padding: 2% 8%;
+  font-size: 3rem;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+}
+
+.logo-img {
+  width: 15%;
+  margin-right: 3%;
+  border-radius: 1rem;
+}
