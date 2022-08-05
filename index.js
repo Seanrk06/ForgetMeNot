@@ -25,7 +25,7 @@ app.get("/teacher", function(req, res) {
 
 
 
-app.listen(3500, function() {
+app.listen(process.env.PORT || 3500, function() {
     console.log("server is running on port 3500");
 });
 
